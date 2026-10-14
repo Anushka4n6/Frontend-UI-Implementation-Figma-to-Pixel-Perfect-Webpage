@@ -49,16 +49,15 @@ img {
 }
 
 .logo img {
-  width: 158px;
-  height: 76px;
+  height: 66.804px;
+  width: auto;
   object-fit: contain;
 }
 
 .navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
 }
 
 .navbar a {
@@ -74,6 +73,7 @@ img {
   background: var(--yellow);
 }
 
+/* ==================== 2. HERO SECTION ==================== */
 .hero {
   min-height: 630px;
   padding: 80px 7%;
@@ -175,180 +175,360 @@ img {
   color: var(--text);
   margin-bottom: 15px;
 }
+/* ==================== 3. PROJECTS SHOWCASE ==================== */
+.projects {
+  padding: 50px 0;
+}
 
-.projects-grid {
+.projects-container {
+  margin: 0 85.263px;
+}
+
+.section-header {
+  text-align: center;
+  margin: 0 auto 39.555px;
+}
+
+.section-title {
+  font-size: 28.128px;
+  font-weight: 700;
+  margin-bottom: 10.548px;
+}
+
+.section-subtitle {
+  text-transform: capitalize;
+  font-size: 13.185px;
+  color: var(--text-muted);
+  word-spacing: 1.2px;
+  letter-spacing: -0.2px;
+}
+
+.project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 45px 25px;
+  gap: 39px;
 }
 
 .project-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
   overflow: hidden;
-  background: var(--white);
-  border-radius: 12px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.10);
-  border: 1px solid rgba(0, 0, 0, 0.20);
-}
-
-.project-card > img {
-  width: 100%;
-  height: 256px;
-  object-fit: cover;
-}
-
-.project-content {
-  padding: 16px;
-}
-
-.project-content h3 {
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.project-content p {
-  color: var(--text);
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.recommendation-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.recommendation-card {
-  min-height: 327px;
-  padding: 28px;
-  background: var(--white);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  border-radius: 4px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
 
-.stars {
-  color: var(--yellow);
-  letter-spacing: 5px;
-  font-size: 18px;
-  margin-bottom: 15px;
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10.548px 26.37px rgba(0, 0, 0, 0.2);
 }
 
-.recommendation-card h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+.project-cover {
+  width: 100%;
+  background-color: var(--input-bg);
+  overflow: hidden;
 }
 
-.recommendation-card p {
-  color: var(--text);
-  font-size: 15px;
-  margin-bottom: 20px;
-}
-
-.recommendation-card img {
-  width: 82px;
-  height: 82px;
+.project-cover img {
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+}
+
+.project-info {
+  text-transform: capitalize;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  padding: 12px 14px 15px 14px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+.project-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1px;
+  color: var(--text-primary);
+}
+
+.project-desc {
+  font-size: 12px;
+  word-spacing: 1px;
+  line-height: 1.7;
+  color: var(--text-muted);
   margin-bottom: 8px;
 }
 
-.recommendation-card h4 {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.recommendation-card small {
-  color: var(--text);
-  font-size: 15px;
-}
-
-.contact-section {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 373px;
-  gap: 40px;
-  align-items: start;
-}
-
-.contact-form-wrapper h2,
-.contact-info > h2 {
-  font-size: 32px;
-  margin-bottom: 35px;
-}
-
-.contact-form {
-  background: var(--white);
-  padding: 25px 36px;
+.project-tags {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 9px;
 }
 
-.contact-form label {
-  color: var(--text);
-  font-size: 18px;
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 11px;
   font-weight: 500;
-  margin-top: 8px;
+  padding: 3px 12px;
+  border-radius: 50px;
+}
+
+/* ==================== 4. RECOMMENDATIONS (infinite carousel) ==================== */
+
+/* The viewport clips the track, so the cards at both ends are cut off */
+.slider {
+  margin: 0 85px;
+  overflow: hidden;
+  touch-action: pan-y;
+  cursor: grab;
+}
+.slider.dragging { cursor: grabbing; }
+
+.slider-track {
+  display: flex;
+  gap: 19.5px;
+  will-change: transform;
+}
+
+.rec-card {
+  flex: 0 0 303.39px;
+  padding: 23.733px 21.975px;
+  padding-right: 0;
+  background: var(--bg-card);
+  user-select: none;
+}
+
+.rec-stars {
+  color: var(--primary-accent);
+  font-size: 17.6px;
+  line-height: 1;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.rec-title {
+  font-size: 15.822px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.rec-text {
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.rec-author {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.rec-avatar {
+  justify-content: flex-start;
+  width: 80px;
+  height: 73px;
+  flex-shrink: 0;
+  border-radius: var(--radius-round);
+  object-fit: cover;
+  background-color: var(--input-bg);
+}
+
+.rec-name {
+  font-size: 17px;
+  font-weight: 500;
   margin-bottom: 2px;
 }
 
-.contact-form input,
-.contact-form textarea {
+.rec-role {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 38px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border: 0;
+  border-radius: var(--radius-round);
+  background: #FFDF8C;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+.dot.active {
+  background: var(--primary-accent);
+}
+
+.dot:focus-visible,
+.nav-link:focus-visible,
+.btn:focus-visible,
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 3px;
+}
+
+
+/* ==================== 5. CONTACT ==================== */
+.contact {
+  padding: 50px 0 55px;
+}
+
+.contact-container {
+  margin: 0 85.263px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 846fr) minmax(0, 372fr);
+  column-gap: 26px;
+}
+
+.contact-heading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  background: var(--bg-card);
+  padding: 0 33px 0;
+  align-self: start;
+}
+
+.field { margin-top: 17px; }
+
+.field label {
+  display: block;
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+
+.field input,
+.field textarea {
+  display: block;
   width: 100%;
   border: 0;
-  outline: none;
-  border-radius: 5px;
-  background: var(--background);
-  padding: 14px;
-  font: inherit;
+  border-radius: var(--radius-sm);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  padding: 0 16px;
+  height: 43.95px;
+  font-size: 15px;
 }
 
-.contact-form input {
-  height: 50px;
-}
-
-.contact-form textarea {
-  min-height: 210px;
+.field textarea {
+  height: 184.59px;
+  padding: 14px 16px;
   resize: vertical;
 }
 
-.contact-form .btn {
-  align-self: flex-start;
-  margin-top: 10px;
+.field.invalid input { box-shadow: inset 0 0 0 2px #D64545; }
+
+.field-error {
+  min-height: 0;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #D64545;
 }
+
+.btn-sm {
+  margin-top: 19px;
+  padding: 14px 18px;
+  font-size: 12px;
+  border: 0;
+  border-radius: var(--radius-sm);
+}
+
+.form-status {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.form-status.success { color: #2E8B57; }
 
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .info-card {
-  background: var(--white);
-  padding: 24px;
+  background: var(--bg-card);
+  padding: 22px;
+  padding-bottom: 11px;
+}
+
+.info-icon {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 10px 20px;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 26px;
+  border-radius: var(--radius-round);
+  background: var(--primary-accent);
+  color: var(--text-primary);
 }
 
-.info-card h3 {
-  color: var(--text);
-  font-size: 17px;
-  font-weight: 500;
+.info-card dl > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 11px;
 }
 
-.info-card p {
-  color: var(--text);
+.info-card dt {
+  letter-spacing: 0.5px;
   font-size: 15px;
+  font-weight: 500;
+  align-self: center;
+}
+
+.info-card dd {
+  letter-spacing: 0.15px;
+  font-size: 13px;
+  color: var(--text-muted);
   text-align: right;
 }
+
+.info-card dd a:hover { color: var(--primary-accent); }
+
+
+/* ==================== 6. PARTNERS ==================== */
+
+.partners-container {
+  margin: 0 206.565px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 125px;
+}
+
+.partners-container img {
+  height: 126.576px;
+  width: auto;
+  object-fit: contain;
+}
+
 
 /* ==================== 7. FOOTER ==================== */
 
@@ -360,7 +540,7 @@ img {
   margin: 0 85.263px;
 }
 
-.footer-top > img {
+.footer-logo img {
   width: auto;
   height: 66px;
 }
