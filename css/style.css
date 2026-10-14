@@ -353,59 +353,77 @@ img {
 /* ==================== 7. FOOTER ==================== */
 
 .footer {
-  background: var(--background);
-  padding-top: 40px;
+  padding: 40px 0;
 }
 
 .footer-top {
-  width: min(1244px, 86%);
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 60px;
+  margin: 0 85.263px;
 }
 
 .footer-top > img {
-  width: 158px;
-  height: 76px;
-  object-fit: contain;
+  width: auto;
+  height: 66px;
 }
 
-.footer-columns {
-  display: flex;
-  gap: 80px;
+.footer-grid {
+  display:grid;
+  grid-template-columns: 408px 274px 302px 1fr;
+  margin-top: 44px;
 }
 
-.footer-columns > div {
+.footer-ratings {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  min-width: 150px;
+  gap: 18px;
 }
 
-.footer-columns h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
+.footer-rating img{
+  height: 35px;
+  width: auto;
 }
 
-.footer-columns a {
-  font-size: 14 px;
-  line-height: 7px;
+.footer-ratings figcaption {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.footer-col h4 {
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.footer-columns a:hover {
-  color: var(--yellow);
+.footer-col li {
+  font-size: 14px;
+  margin-bottom: 7px;
 }
+
+.footer-col a:hover { color: var(--primary-accent); }
+
+.footer-social li { margin-bottom: 13.5px; }
+.footer-social img { height: 22px; width: auto; }
+
 
 .copyright {
-  margin-top: 21 px;
-  padding: 20px;
-  text-align: center;
-  gap:8px;
-  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 21px;
   font-size: 13px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  color: var(--text-muted);
 }
+
+.copy-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--text-muted);
+  border-radius: var(--radius-round);
+  font-size: 11px;
+}
+
 
 
 /* ==================== RESPONSIVE ==================== */
@@ -451,7 +469,7 @@ img {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
   .header {
     padding: 15px 5%;
   }
