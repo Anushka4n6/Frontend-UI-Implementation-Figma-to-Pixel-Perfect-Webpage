@@ -285,8 +285,15 @@ img {
 /* ==================== 4. RECOMMENDATIONS (infinite carousel) ==================== */
 
 /* The viewport clips the track, so the cards at both ends are cut off */
+.recommendation {
+  padding: 30px 0 60px;
+}
+
+.recommendation-container {
+  margin: 0 97px;
+}
 .slider {
-  margin: 0 85px;
+  margin: 0 97px;
   overflow: hidden;
   touch-action: pan-y;
   cursor: grab;
@@ -294,38 +301,40 @@ img {
 .slider.dragging { cursor: grabbing; }
 
 .slider-track {
+  --rec-gap: 24px;
   display: flex;
-  gap: 19.5px;
+  gap: var(--rec-gap);
+  width: max-content;
   will-change: transform;
 }
 
 .rec-card {
-  flex: 0 0 303.39px;
-  padding: 23.733px 21.975px;
-  padding-right: 0;
+  flex: 0 0 341px;
+  height: 327px;
+  padding: 34px 28px 24px;
   background: var(--bg-card);
   user-select: none;
 }
 
 .rec-stars {
   color: var(--primary-accent);
-  font-size: 17.6px;
+  font-size: 22px;
   line-height: 1;
   letter-spacing: 2px;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
 .rec-title {
-  font-size: 15.822px;
+  font-size: 18px;
   font-weight: 500;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .rec-text {
-  font-size: 12px;
-  line-height: 1.75;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .rec-author {
@@ -335,31 +344,31 @@ img {
 }
 
 .rec-avatar {
-  justify-content: flex-start;
-  width: 80px;
-  height: 73px;
+  width: 88px;
+  height: 88px;
   flex-shrink: 0;
   border-radius: var(--radius-round);
   object-fit: cover;
   background-color: var(--input-bg);
+  pointer-events: none;
 }
 
 .rec-name {
   font-size: 17px;
   font-weight: 500;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .rec-role {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
 }
 
 .slider-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: 38px;
+  gap: 10px;
+  margin-top: 48px;
 }
 
 .dot {
