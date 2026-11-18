@@ -1,15 +1,17 @@
 :root {
   /* Colors */
-  --primary-accent: #FFB400;
-  --bg-page: #F7F8FA;
-  --bg-card: #f6fcff;
-  --text-primary: #2B2B2B;
-  --text-muted: #f0f0f0;
+  --primary-accent: #0077B6;
+  --secondary-accent: #FFDF8C;
+  --bg-page: #F8F9FA;
+  --bg-card: #FFFFFF;
+  --text: #FFFFFF;
+  --text-dark: #6C6C6C;
+  --shadow: #f0f0f0;
   --input-bg: #E8EAEF;
 
   /* Layout & Spacing */
   --radius: 100px;
-  --shadow-card: 0 3.516px 15.822px rgba(47, 122, 249, 0.1);
+  --radius-sm: 30px;
 
   /* Typography */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -18,7 +20,7 @@
 body {
   font-family: var(--font-family);
   background-color: var(--bg-page);
-  color: var(--text-primary);
+  color: var(--text-dark);
 }
 
 /* ==================== 1. NAVIGATION BAR ==================== */
@@ -27,15 +29,45 @@ body {
   top: 0;
   z-index: 100;
   background-color: var(--bg-card);
-  box-shadow: var(--shadow-card);
   padding: 68px 79px 58px 51px;
-  border-bottom: 5px solid var(--text-muted);
+  border-bottom: 5px solid var(--shadow);
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.nav-menu {
+  position: relative;
+}
+
+.nav-menu-toggle {
+  display: flex;
+  width: 73px;
+  height: 73px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  padding-bottom: 12px;
+}
+
+.nav-menu-toggle span {
+  width: 73px;
+  height: 7px;
+  border-radius: 2px;
+  background-color: var(--primary-accent);
+}
+
+.nav-menu-toggle:focus-visible {
+  outline: 2px solid var(--primary-accent);
+  outline-offset: 3px;
 }
 
 .logo{
@@ -46,15 +78,41 @@ body {
 }
 
 .nav-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 101;
   display: flex;
-  align-items: center;
-  gap: 37px;
+  min-width: 220px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--shadow);
+  border-radius: 12px;
+  background-color: var(--bg-card);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.nav-menu:hover .nav-links,
+.nav-menu:focus-within .nav-links {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .nav-link {
+  display: block;
+  padding: 9px 12px;
   font-size: 20px;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--text-dark);
   border-radius: var(--radius-sm);
   transition: color 0.25s ease, background-color 0.25s ease;
 }
@@ -68,8 +126,13 @@ body {
   text-decoration: underline;
   text-underline-offset: 6px;
   font-weight: 600;
-  padding: 9px 12px;
 }
+
+.nav-links .btn {
+  display: block;
+  text-align: center;
+}
+
 
 /* ==================== 2. HERO SECTION ==================== */
 .hero {
