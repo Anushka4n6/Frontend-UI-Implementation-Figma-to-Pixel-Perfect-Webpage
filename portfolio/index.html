@@ -1,63 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=1440px, initial-scale=1.0">
-  <title>Rayan Adlrdard | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Engineering Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="header">
-    <a href="#home" class="logo">
-        <svg width="158" height="76" viewBox="0 0 158 76" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <rect width="158" height="76" fill="url(#pattern0_1_824)"/>
-            <defs>
-                <pattern id="pattern0_1_824" patternContentUnits="objectBoundingBox" width="1" height="1">
-                    <use xlink:href="#image0_1_824" transform="matrix(0.00624692 0 0 0.012987 -0.024741 0)"/>
-                </pattern>
-                <image id="image0_1_824" width="168" height="77" preserveAspectRatio="none" xlink:href="/assets/Logo.png"/>
-            </defs>
-        </svg>
-    </a>
-
+  <!-- Global Navigation -->
+  <header class="navbar-wrapper">
     <nav class="navbar">
-      <a href="#home" class="active">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#recommendations">Recommendations</a>
-      <a href="#contact">Contact</a>
+      <a href="#" class="logo">
+        <img src="assets/Logo.png" alt="Brand Logo" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#recommendations" class="nav-link">Recommendations</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
     </nav>
   </header>
+  <!-- 2. Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        I'm Rayan AdIrdard <br>
+        <span class="highlight">Front-end</span> Developer
+      </h1>
+      <p class="hero-description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat<br>placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</p>
+      <a href="#contact" class="btn">HIRE ME &rarr;</a>
+    </div>
 
-  <main>
-
-    <!-- Hero -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h1>
-          I’m Rayan Adlrdard<br>
-          <span>Front-end</span> Developer
-        </h1>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Et, volutpat feugiat placerat lobortis. Natoque rutrum
-          semper sed suspendisse nunc lectus.
-        </p>
-
-        <a href="#contact" class="btn">
-          HIRE ME <span>→</span>
-        </a>
-      </div>
-
-      <div class="hero-image">
-        <img src="/assets/hero.png" alt="Developer illustration">
-      </div>
-    </section>
-
-     <!-- 3. Projects Showcase -->
+    <div class="hero-image">
+      <img src="assets/hero.png" alt="Developer desk illustration" />
+    </div>
+  </section>
+  <!-- 3. Projects Showcase -->
   <section class="projects" id="projects">
     <div class="projects-container">
       <div class="section-header">
@@ -86,7 +72,8 @@
             </div>
           </div>
         </article>
-         <!-- How to make Flyer Design -->
+
+        <!-- How to make Flyer Design -->
         <article class="project-card">
           <div class="project-cover">
             <img src="assets/project2.png" alt="How to make Flyer Design Preview" />
@@ -102,7 +89,8 @@
             </div>
           </div>
         </article>
-         <!-- How to make Flyer Design -->
+
+        <!-- How to make Flyer Design -->
         <article class="project-card">
           <div class="project-cover">
             <img src="assets/project3.png" alt="How to make Flyer Design Preview" />
@@ -121,7 +109,7 @@
           </div>
         </article>
 
-         <!-- How to make Flyer Design -->
+        <!-- How to make Flyer Design -->
         <article class="project-card">
           <div class="project-cover">
             <img src="assets/project4.png" alt="How to make Flyer Design Preview" />
@@ -181,7 +169,7 @@
     </div>
   </section>
 
-     <!-- 4. Recommendations -->
+  <!-- 4. Recommendations -->
   <section class="recommendation" id="recommendations">
     <div class="recommendation-container">
       <div class="section-header">
@@ -199,7 +187,7 @@
           <h3 class="rec-title">Great Quality!</h3>
           <p class="rec-text">Lorem Ipsum Dolor Sit Amet,<br>Consectetur Adipiscing Elit. Vitae Nulla<br>Diam In Ac Dictum A Urna Viverra Morbi.<br>Morbi Donec Amet....</p>
           <div class="rec-author">
-            <img class="rec-avatar" src="/assets/Profile 2.png" alt="Talan Westervelt" draggable="false" />
+            <img class="rec-avatar" src="assets/Profile3.png" alt="Talan Westervelt" draggable="false" />
             <div>
               <p class="rec-name">Talan Westervelt</p>
               <p class="rec-role">Business Man</p>
@@ -211,7 +199,7 @@
           <h3 class="rec-title">Great Quality!</h3>
           <p class="rec-text">Lorem Ipsum Dolor Sit Amet,<br>Consectetur Adipiscing Elit. Vitae Nulla<br>Diam In Ac Dictum A Urna Viverra Morbi.<br>Morbi Donec Amet....</p>
           <div class="rec-author">
-            <img class="rec-avatar" src="/assets/Profile 3.png" alt="James Gouse" draggable="false" />
+            <img class="rec-avatar" src="assets/Profile1.png" alt="James Gouse" draggable="false" />
             <div>
               <p class="rec-name">James Gouse</p>
               <p class="rec-role">Graphic Designer</p>
@@ -223,7 +211,7 @@
           <h3 class="rec-title">Amazing Work!</h3>
           <p class="rec-text">Lorem Ipsum Dolor Sit Amet,<br>Consectetur Adipiscing Elit. Vitae Nulla<br>Diam In Ac Dictum A Urna Viverra Morbi.<br>Morbi Donec Amet....</p>
           <div class="rec-author">
-            <img class="rec-avatar" src="/assets/Profile1.png" alt="Tiana Philips" draggable="false" />
+            <img class="rec-avatar" src="assets/Profile2.png" alt="Tiana Philips" draggable="false" />
             <div>
               <p class="rec-name">Tiana Philips</p>
               <p class="rec-role">Photographer</p>
@@ -235,7 +223,7 @@
           <h3 class="rec-title">Great Quality!</h3>
           <p class="rec-text">Lorem Ipsum Dolor Sit Amet,<br>Consectetur Adipiscing Elit. Vitae Nulla<br>Diam In Ac Dictum A Urna Viverra Morbi.<br>Morbi Donec Amet....</p>
           <div class="rec-author">
-            <img class="rec-avatar" src="/assets/Profile 2.png" alt="Talan Westervelt" draggable="false" />
+            <img class="rec-avatar" src="assets/Profile3.png" alt="Talan Westervelt" draggable="false" />
             <div>
               <p class="rec-name">Talan Westervelt</p>
               <p class="rec-role">Business Man</p>
@@ -247,7 +235,7 @@
           <h3 class="rec-title">Great Quality!</h3>
           <p class="rec-text">Lorem Ipsum Dolor Sit Amet,<br>Consectetur Adipiscing Elit. Vitae Nulla<br>Diam In Ac Dictum A Urna Viverra Morbi.<br>Morbi Donec Amet....</p>
           <div class="rec-author">
-            <img class="rec-avatar" src="/assets/Profile1.png" alt="James Gouse" draggable="false" />
+            <img class="rec-avatar" src="assets/Profile1.png" alt="James Gouse" draggable="false" />
             <div>
               <p class="rec-name">James Gouse</p>
               <p class="rec-role">Graphic Designer</p>
@@ -259,7 +247,8 @@
 
     <div class="slider-dots" role="tablist" aria-label="Choose recommendation"></div>
   </section>
- <!-- 5. Contact -->
+
+  <!-- 5. Contact -->
   <section class="contact" id="contact">
     <div class="contact-container">
       <div class="contact-grid">
@@ -325,19 +314,26 @@
     </div>
   </section>
 
+  <!-- 6. Partner logos -->
+  <section class="partners" aria-label="Partners">
+    <div class="partners-container">
+      <img src="assets/Partner1.png" alt="Partner 1" />
+      <img src="assets/Partner2.png" alt="Partner 2" />
+      <img src="assets/Partner3.png" alt="Partner 3" />
+      <img src="assets/Partner4.png" alt="Partner 4" />
+    </div>
+  </section>
 
-
-<!-- 7. Footer -->
-
- <footer class="footer">
-    <div class="footer-top">
-      <a href="#home" class="footer-logo"><img src="/assets/Logo.png" alt="Brand Logo" /></a>
+  <!-- 7. Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <a href="#home" class="footer-logo"><img src="assets/Logo.png" alt="Brand Logo" /></a>
 
       <div class="footer-grid">
         <div class="footer-ratings">
-          <figure><img src="/assets/badge1.png" alt="Platform 1" /><figcaption>4.5/5 Rating On Lorem</figcaption></figure>
-          <figure><img src="/assets/badge2.png" alt="Platform 2" /><figcaption>9/10 Rating On Ipsum</figcaption></figure>
-          <figure style="margin-top: 5px"><img src="/assets/badge3.png" alt="Platform 3" /><figcaption>4.5/5 Rating On Dorel</figcaption></figure>
+          <figure><img src="assets/badge1.png" alt="Platform 1" /><figcaption>4.5/5 Rating On Lorem</figcaption></figure>
+          <figure><img src="assets/badge2.png" alt="Platform 2" /><figcaption>9/10 Rating On Ipsum</figcaption></figure>
+          <figure style="margin-top: 5px"><img src="assets/badge3.png" alt="Platform 3" /><figcaption>4.5/5 Rating On Dorel</figcaption></figure>
         </div>
 
         <nav class="footer-col" aria-label="Quick links">
@@ -372,10 +368,10 @@
         </div>
       </div>
 
-    <div class="copyright">
-      © 2024 Copyright, All right reserved
+      <p class="copyright"><span class="copy-mark" aria-hidden="true">&copy;</span> <span id="year">2026</span> Copyright, All Right Reserved</p>
     </div>
   </footer>
 
+  <script src="js/main.js"></script>
 </body>
 </html>
